@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: {{ .Values.Name }}-service--{{ .Values.DeploymentTag }}
 spec:
-  type: NodePort
   selector:
     app: {{ .Values.Name }}
   ports:
-    - port: 5000
+    - protocol: TCP
+      port: 5000
       targetPort: 5000
-      nodePort: {{ .Values.ExternalPort }}
