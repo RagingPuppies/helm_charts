@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.Name }}-service
+  name: {{ .Values.Name }}-service--{{ .Values.DeploymentTag }}
 spec:
   type: NodePort
   selector:
